@@ -1,0 +1,20 @@
+.ViewWindow{
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgb(#000, .5);
+  padding: 1rem;
+  .container{
+    background: #fff;
+    border-radius: 1rem;
+    padding: 1rem;
+    img{
+      display: block;
+      max-width: 20rem;
+      margin-bottom: 1rem;
+    }
+  }
+}

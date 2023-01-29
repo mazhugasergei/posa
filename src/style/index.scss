@@ -4,10 +4,68 @@
   box-sizing: border-box;
 }
 
+@import "./variables/colors";
+@import "./ui/typography";
+@import "./ui/btn";
+@import "./components/ViewWindow";
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: $main;
+}
+
+ul{
+  list-style: none;
+}
+
+.loader{
+  position: absolute;
+  left: 50%;
+  aspect-ratio: 1/1;
+  width: 2rem;
+  border: .125rem solid #ededed;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  margin: 2rem;
+  @keyframes loader{
+    from{ transform: translateX(-50%) rotate(0); }
+    to{ transform: translateX(-50%) rotate(360deg); }
+  }
+  animation: 1s loader linear infinite;
+}
+
+nav{
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+  input[type=radio]{
+    display: none;
+    &:checked + label{
+      background: #EDEDED;
+      color: $main;
+    }
+  }
+  label{
+    cursor: pointer;
+    display: block;
+    font-weight: 600;
+    border: .0625rem solid #EDEDED;
+    border-radius: 100vmax;
+    padding: .5rem .75rem;
+  }
+}
+
+.images{
+  position: relative;
+  display: flex; ////
+  // display: grid;
+  // grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+}
+.img{
+  cursor: pointer;
+  aspect-ratio: 1/1;
+  width: 10rem; ////
+  background: #222;
+  background-size: cover;
+  background-position: center;
 }

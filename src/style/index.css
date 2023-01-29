@@ -4,8 +4,114 @@
   box-sizing: border-box;
 }
 
-body {
+body, button {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 0.875rem;
+  color: #EDEDED;
+}
+
+.btn {
+  cursor: pointer;
+  display: block;
+  background: #1c1c1c;
+  color: #ededed;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.ViewWindow {
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+}
+.ViewWindow .container {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+.ViewWindow .container img {
+  display: block;
+  max-width: 20rem;
+  margin-bottom: 1rem;
+}
+
+body {
+  background: #1c1c1c;
+}
+
+ul {
+  list-style: none;
+}
+
+.loader {
+  position: absolute;
+  left: 50%;
+  aspect-ratio: 1/1;
+  width: 2rem;
+  border: 0.125rem solid #ededed;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  margin: 2rem;
+  -webkit-animation: 1s loader linear infinite;
+          animation: 1s loader linear infinite;
+}
+@-webkit-keyframes loader {
+  from {
+    transform: translateX(-50%) rotate(0);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+@keyframes loader {
+  from {
+    transform: translateX(-50%) rotate(0);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+nav input[type=radio] {
+  display: none;
+}
+nav input[type=radio]:checked + label {
+  background: #EDEDED;
+  color: #1c1c1c;
+}
+nav label {
+  cursor: pointer;
+  display: block;
+  font-weight: 600;
+  border: 0.0625rem solid #EDEDED;
+  border-radius: 100vmax;
+  padding: 0.5rem 0.75rem;
+}
+
+.images {
+  position: relative;
+  display: flex;
+}
+
+.img {
+  cursor: pointer;
+  aspect-ratio: 1/1;
+  width: 10rem;
+  background: #222;
+  background-size: cover;
+  background-position: center;
 }/*# sourceMappingURL=index.css.map */

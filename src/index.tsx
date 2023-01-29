@@ -6,7 +6,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom'
 // style
 import './style/index.css'
 // components
-import Home from './components/Home'
+import Home from './Home'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
