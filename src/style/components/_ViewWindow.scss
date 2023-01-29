@@ -10,16 +10,17 @@
   .container{
     position: absolute;
     background: #fff;
-    border-radius: 1rem;
-    padding: 1rem;
+    border-radius: .25rem;
+    padding: .75rem;
     img{
       display: block;
       max-width: 20rem;
-      margin-bottom: 1rem;
+      margin-bottom: .5rem;
     }
     .cont{
-      display: flex;
-      justify-content: space-between;
+      .btn{
+        width: 100%;
+      }
     }
   }
 }
