@@ -1,6 +1,6 @@
 {
   "homepage": "https://markuswedler.github.io/gallery",
-  "name": "gallary",
+  "name": "gallery",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
