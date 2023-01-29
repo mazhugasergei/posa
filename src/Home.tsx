@@ -41,14 +41,14 @@ const Home = () => {
   const closeViewWindow = () => setViewWindow(null)
 
   return (
-    <main className="home">
+    <main className="Home">
       { viewWindow }
       <nav>
         {
           dates.map((date, i)=>(
             <div key={i}>
               <input type="radio" name="date" id={date} defaultChecked={date==now? true : false} onChange={changeDate} />
-              <label htmlFor={date}>{date}</label>
+              <label className="btn" htmlFor={date}>{date}</label>
             </div>
           ))
         }

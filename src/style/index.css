@@ -12,14 +12,53 @@ body, button {
   color: #EDEDED;
 }
 
+a {
+  text-decoration: none;
+}
+
 .btn {
   cursor: pointer;
-  display: block;
   background: #1c1c1c;
   color: #ededed;
+  font-weight: 600;
   border: none;
   border-radius: 0.5rem;
   padding: 0.5rem 0.75rem;
+}
+.btn.green {
+  background: #05D36B;
+}
+
+.Home nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+.Home nav input[type=radio] {
+  display: none;
+}
+.Home nav input[type=radio]:checked + label {
+  background: #EDEDED;
+  color: #1c1c1c;
+}
+.Home nav label {
+  cursor: pointer;
+  display: block;
+  border: 0.0625rem solid #EDEDED;
+  border-radius: 100vmax;
+}
+.Home .images {
+  position: relative;
+  display: flex;
+}
+.Home .img {
+  cursor: pointer;
+  aspect-ratio: 1/1;
+  width: 10rem;
+  background: #222;
+  background-size: cover;
+  background-position: center;
 }
 
 .ViewWindow {
@@ -33,6 +72,7 @@ body, button {
   padding: 1rem;
 }
 .ViewWindow .container {
+  position: absolute;
   background: #fff;
   border-radius: 1rem;
   padding: 1rem;
@@ -41,6 +81,10 @@ body, button {
   display: block;
   max-width: 20rem;
   margin-bottom: 1rem;
+}
+.ViewWindow .container .cont {
+  display: flex;
+  justify-content: space-between;
 }
 
 body {
@@ -54,12 +98,12 @@ ul {
 .loader {
   position: absolute;
   left: 50%;
+  top: 2rem;
   aspect-ratio: 1/1;
   width: 2rem;
   border: 0.125rem solid #ededed;
   border-bottom-color: transparent;
   border-radius: 50%;
-  margin: 2rem;
   -webkit-animation: 1s loader linear infinite;
           animation: 1s loader linear infinite;
 }
@@ -78,40 +122,4 @@ ul {
   to {
     transform: translateX(-50%) rotate(360deg);
   }
-}
-
-nav {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  padding: 1rem;
-}
-nav input[type=radio] {
-  display: none;
-}
-nav input[type=radio]:checked + label {
-  background: #EDEDED;
-  color: #1c1c1c;
-}
-nav label {
-  cursor: pointer;
-  display: block;
-  font-weight: 600;
-  border: 0.0625rem solid #EDEDED;
-  border-radius: 100vmax;
-  padding: 0.5rem 0.75rem;
-}
-
-.images {
-  position: relative;
-  display: flex;
-}
-
-.img {
-  cursor: pointer;
-  aspect-ratio: 1/1;
-  width: 10rem;
-  background: #222;
-  background-size: cover;
-  background-position: center;
 }/*# sourceMappingURL=index.css.map */

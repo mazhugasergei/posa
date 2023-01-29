@@ -1,0 +1,36 @@
+.Home{
+  nav{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+    input[type=radio]{
+      display: none;
+      &:checked + label{
+        background: #EDEDED;
+        color: $main;
+      }
+    }
+    label{
+      cursor: pointer;
+      display: block;
+      border: .0625rem solid #EDEDED;
+      border-radius: 100vmax;
+    }
+  }
+  
+  .images{
+    position: relative;
+    display: flex; ////
+    // display: grid;
+    // grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  }
+  .img{
+    cursor: pointer;
+    aspect-ratio: 1/1;
+    width: 10rem; ////
+    background: #222;
+    background-size: cover;
+    background-position: center;
+  }
+}

@@ -8,6 +8,7 @@
   background: rgb(#000, .5);
   padding: 1rem;
   .container{
+    position: absolute;
     background: #fff;
     border-radius: 1rem;
     padding: 1rem;
@@ -15,6 +16,10 @@
       display: block;
       max-width: 20rem;
       margin-bottom: 1rem;
+    }
+    .cont{
+      display: flex;
+      justify-content: space-between;
     }
   }
 }
