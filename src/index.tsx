@@ -5,6 +5,8 @@ import ReactDOM from 'react-dom/client'
 import { HashRouter, Routes, Route } from 'react-router-dom'
 // style
 import './style/index.css'
+// layout components
+import Header from './components/layout/Header'
 // components
 import Home from './Home'
 
@@ -13,6 +15,7 @@ const root = ReactDOM.createRoot(
 )
 root.render(
   <React.StrictMode>
+    <Header />
     <HashRouter>
       <Routes>
         <Route path="/" element={<Home />}/>

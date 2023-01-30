@@ -5,9 +5,11 @@
 }
 
 @import "./variables/colors";
+@import "./ui/wrapper";
 @import "./ui/typography";
 @import "./ui/btn";
 @import "./pages/Home";
+@import "./components/layout/Header";
 @import "./components/ViewWindow";
 
 body {

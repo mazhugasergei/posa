@@ -1,19 +1,18 @@
 // react
 import { useEffect } from "react"
+// images
+import download from "../images/ui/download.svg"
 
 const ViewWindow = ({ url, close }: { url: string, close: ()=>void }) => {
-  useEffect(()=>{
-    // close on outside click
-    document.querySelector(".ViewWindow")?.addEventListener("click", (e)=>{
-      if(e.target !== document.querySelector(".ViewWindow img")) close()
-    })
-  }, [])
-
   return (
     <div className="ViewWindow">
+      <div className="close" onClick={close} />
+      <nav className="control">
+        <label className="close" onClick={close} />
+        <label className="download"><img src={download} alt="" /></label>
+      </nav>
       <div className="container">
-        <img src={url} alt="" />
-        <button className="btn light">Close</button>
+        <img className="img" src={url} alt="" />
       </div>
     </div>
   )

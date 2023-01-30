@@ -1,5 +1,5 @@
 .ViewWindow{
-  z-index: 999;
+  z-index: 1000;
   position: absolute;
   top: 0;
   right: 0;
@@ -8,6 +8,45 @@
   background: rgb(#000, .5);
   backdrop-filter: blur(10px);
   padding: 2rem;
+  & > .close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .control{
+    position: relative;
+    z-index: inherit;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+    gap: .0625rem;
+    margin-left: auto;
+    label{
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      aspect-ratio: 1/1;
+      width: 2rem;
+      background: #fff;
+      img{
+        width: 1.1rem;
+      }
+    }
+    .close{
+      &::before, &::after{
+        content: '';
+        position: absolute;
+        height: .09rem;
+        width: .852rem;
+        background: #000;
+      }
+      &::before{ transform: rotate(45deg); }
+      &::after{ transform: rotate(-45deg); }
+    }
+  }
   .container{
     position: absolute;
     left: 50%;
@@ -17,11 +56,7 @@
     img{
       display: block;
       max-width: calc(100vw - 4rem); // 100vw - ViewWindow_Padding_Inline
-      max-height: calc(100vh - 4rem - 1rem - 2.03125rem); // 100vh - ViewWindow_Padding_Block - img_Margin_Bottom - button_Height
-      margin-bottom: 1rem;
-    }
-    .btn{
-      width: 100%;
+      max-height: calc(100vh - 4rem); // 100vh - ViewWindow_Padding_Block
     }
   }
 }

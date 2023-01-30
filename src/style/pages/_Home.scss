@@ -1,20 +1,20 @@
 .Home{
-  nav{
+  .dates{
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    padding: 1rem;
+    padding: var(--wrapper-padding);
     input[type=radio]{
       display: none;
       &:checked + label{
-        background: #EDEDED;
+        background: $light;
         color: $main;
       }
     }
     label{
       cursor: pointer;
       display: block;
-      border: .0625rem solid #EDEDED;
+      border: .0625rem solid $light;
       border-radius: 100vmax;
     }
   }
@@ -25,7 +25,7 @@
     // display: grid;
     // grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   }
-  .img{
+  .img_prev{
     cursor: pointer;
     aspect-ratio: 1/1;
     width: 10rem; ////

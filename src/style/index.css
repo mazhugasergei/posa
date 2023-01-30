@@ -4,6 +4,17 @@
   box-sizing: border-box;
 }
 
+:root {
+  --wrapper-padding: 1rem;
+}
+
+.wrapper {
+  padding-left: var(--wrapper-padding);
+  padding-right: var(--wrapper-padding);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 body, button {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -32,30 +43,30 @@ a {
   background: #05D36B;
 }
 
-.Home nav {
+.Home .dates {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
-  padding: 1rem;
+  padding: var(--wrapper-padding);
 }
-.Home nav input[type=radio] {
+.Home .dates input[type=radio] {
   display: none;
 }
-.Home nav input[type=radio]:checked + label {
-  background: #EDEDED;
+.Home .dates input[type=radio]:checked + label {
+  background: #ededed;
   color: #1c1c1c;
 }
-.Home nav label {
+.Home .dates label {
   cursor: pointer;
   display: block;
-  border: 0.0625rem solid #EDEDED;
+  border: 0.0625rem solid #ededed;
   border-radius: 100vmax;
 }
 .Home .images {
   position: relative;
   display: flex;
 }
-.Home .img {
+.Home .img_prev {
   cursor: pointer;
   aspect-ratio: 1/1;
   width: 10rem;
@@ -64,8 +75,17 @@ a {
   background-position: center;
 }
 
+header .logo {
+  aspect-ratio: 208/129;
+  width: 8rem;
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  filter: invert(1);
+}
+
 .ViewWindow {
-  z-index: 999;
+  z-index: 1000;
   position: absolute;
   top: 0;
   right: 0;
@@ -75,6 +95,47 @@ a {
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   padding: 2rem;
+}
+.ViewWindow > .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.ViewWindow .control {
+  position: relative;
+  z-index: inherit;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+  gap: 0.0625rem;
+  margin-left: auto;
+}
+.ViewWindow .control label {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1/1;
+  width: 2rem;
+  background: #fff;
+}
+.ViewWindow .control label img {
+  width: 1.1rem;
+}
+.ViewWindow .control .close::before, .ViewWindow .control .close::after {
+  content: "";
+  position: absolute;
+  height: 0.09rem;
+  width: 0.852rem;
+  background: #000;
+}
+.ViewWindow .control .close::before {
+  transform: rotate(45deg);
+}
+.ViewWindow .control .close::after {
+  transform: rotate(-45deg);
 }
 .ViewWindow .container {
   position: absolute;
@@ -86,11 +147,7 @@ a {
 .ViewWindow .container img {
   display: block;
   max-width: calc(100vw - 4rem);
-  max-height: calc(100vh - 4rem - 1rem - 2.03125rem);
-  margin-bottom: 1rem;
-}
-.ViewWindow .container .btn {
-  width: 100%;
+  max-height: calc(100vh - 4rem);
 }
 
 body {

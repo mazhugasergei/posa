@@ -1,0 +1,10 @@
+:root{
+  --wrapper-padding: 1rem;
+}
+
+.wrapper{
+  padding-left: var(--wrapper-padding);
+  padding-right: var(--wrapper-padding);
+  margin-left: auto;
+  margin-right: auto;
+}
