@@ -22,7 +22,7 @@ a {
   color: #ededed;
   font-weight: 600;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   padding: 0.5rem 0.75rem;
 }
 .btn.green {
@@ -73,14 +73,18 @@ a {
 }
 .ViewWindow .container {
   position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   background: #fff;
   border-radius: 0.25rem;
-  padding: 0.75rem;
+  padding: 1rem;
 }
 .ViewWindow .container img {
   display: block;
-  max-width: 20rem;
-  margin-bottom: 0.5rem;
+  max-width: calc(100vw - 2rem - 2rem);
+  max-height: calc(100vh - 2rem - 2rem - 1rem - 2.03125rem);
+  margin-bottom: 1rem;
 }
 .ViewWindow .container .cont .btn {
   width: 100%;
