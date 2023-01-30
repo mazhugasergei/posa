@@ -22,8 +22,11 @@ a {
   color: #ededed;
   font-weight: 600;
   border: none;
-  border-radius: 0.25rem;
-  padding: 0.5rem 0.75rem;
+  padding: 0.6rem 0.8rem;
+}
+.btn.light {
+  background: #ededed;
+  color: #1c1c1c;
 }
 .btn.green {
   background: #05D36B;
@@ -69,24 +72,24 @@ a {
   bottom: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.5);
-  padding: 1rem;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  padding: 2rem;
 }
 .ViewWindow .container {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background: #fff;
   border-radius: 0.25rem;
-  padding: 1rem;
 }
 .ViewWindow .container img {
   display: block;
-  max-width: calc(100vw - 2rem - 2rem);
-  max-height: calc(100vh - 2rem - 2rem - 1rem - 2.03125rem);
+  max-width: calc(100vw - 4rem);
+  max-height: calc(100vh - 4rem - 1rem - 2.03125rem);
   margin-bottom: 1rem;
 }
-.ViewWindow .container .cont .btn {
+.ViewWindow .container .btn {
   width: 100%;
 }
 

@@ -6,25 +6,24 @@
   bottom: 0;
   left: 0;
   background: rgb(#000, .5);
-  padding: 1rem;
+  backdrop-filter: blur(10px);
+  padding: 2rem;
   .container{
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background: #fff;
     border-radius: .25rem;
-    padding: 1rem;
     img{
       display: block;
-      max-width: calc(100vw - 2rem - 2rem); // 100vw - ViewWindow_Padding_Inline - container_Padding_Inline
-      max-height: calc(100vh - 2rem - 2rem - 1rem - 2.03125rem); // 100vh - ViewWindow_Padding_Block - container_Padding_Block - img_Margin_Bottom - button_Height
+      max-width: calc(100vw - 4rem);
+      // 100vw - ViewWindow_Padding_Inline
+      max-height: calc(100vh - 4rem - 1rem - 2.03125rem);
+      // 100vh - ViewWindow_Padding_Block - img_Margin_Bottom - button_Height
       margin-bottom: 1rem;
     }
-    .cont{
-      .btn{
-        width: 100%;
-      }
+    .btn{
+      width: 100%;
     }
   }
 }

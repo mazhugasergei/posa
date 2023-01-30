@@ -3,9 +3,7 @@ const ViewWindow = ({ url, close }: { url: string, close: ()=>void }) => {
     <div className="ViewWindow">
       <div className="container">
         <img src={url} alt="" />
-        <div className="cont">
-          <button className="btn" onClick={close}>Close</button>
-        </div>
+        <button className="btn light" onClick={close}>Close</button>
       </div>
     </div>
   )
