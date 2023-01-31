@@ -75,12 +75,11 @@ a {
   background-position: center;
 }
 
+header {
+  padding: 1rem;
+}
 header .logo {
-  aspect-ratio: 208/129;
   width: 8rem;
-  background-size: contain !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
   filter: invert(1);
 }
 

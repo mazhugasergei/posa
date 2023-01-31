@@ -1,7 +1,10 @@
+// images
+import logo from "../../images/ui/logo.svg"
+
 const Header = () => {
   return (
     <header className="wrapper">
-      <div className="logo"/>
+      <img className="logo" src={logo} alt="" />
     </header>
   )
 }
