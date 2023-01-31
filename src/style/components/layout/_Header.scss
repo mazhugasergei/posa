@@ -1,6 +1,8 @@
 header{
   padding: 1rem;
   .logo{
+    pointer-events: none;
+    user-select: none;
     width: 8rem;
     filter: invert(1);
   }

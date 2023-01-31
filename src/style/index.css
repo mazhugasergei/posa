@@ -79,6 +79,11 @@ header {
   padding: 1rem;
 }
 header .logo {
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   width: 8rem;
   filter: invert(1);
 }
