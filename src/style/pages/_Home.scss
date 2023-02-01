@@ -1,9 +1,18 @@
 .Home{
   .dates{
+    overflow-x: auto;
     display: flex;
     gap: 1rem;
-    flex-wrap: wrap;
     padding: var(--wrapper-padding);
+    &::-webkit-scrollbar {
+      height: .5rem;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: lighten($main, 20); 
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      // background: #555;
+    }
     input[type=radio]{
       position: absolute;
       opacity: 0;
@@ -28,12 +37,15 @@
     position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-  }
-  .img_prev{
-    cursor: pointer;
-    aspect-ratio: 1/1;
-    background: #222;
-    background-size: cover;
-    background-position: center;
+    .loader{
+      top: 2rem;
+    }
+    .img_prev{
+      cursor: pointer;
+      aspect-ratio: 1/1;
+      background: #222;
+      background-size: cover;
+      background-position: center;
+    }
   }
 }

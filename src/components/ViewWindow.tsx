@@ -1,9 +1,15 @@
 // images
-import downloadBtn from "../images/ui/download.svg"
+import downloadImg from "../images/ui/download.svg"
 
 const ViewWindow = ({ url, close }: { url: string, close: ()=>void }) => {
   const downloadImage = async (url: string) => {
-    // document.querySelector('.ViewWindow .control .download')?.innerHTML = document.createElement('div')
+    // add loader to download btn
+    const downloadBtn = document.querySelector('.ViewWindow .control .download') as HTMLElement
+    downloadBtn.innerHTML = ""
+    const loader = document.createElement("div")
+    loader.classList.add("loader")
+    downloadBtn.appendChild(loader)
+    // download the image
     await fetch(url)
       .then(res => {return res.blob()})
       .then(blob =>{
@@ -12,6 +18,11 @@ const ViewWindow = ({ url, close }: { url: string, close: ()=>void }) => {
         link.download = ""
         link.click()
       })
+    // remove loader from download btn
+    downloadBtn.innerHTML = ""
+    const img = document.createElement("img")
+    img.src = downloadImg
+    downloadBtn.appendChild(img)
   }
 
   return (
@@ -19,7 +30,7 @@ const ViewWindow = ({ url, close }: { url: string, close: ()=>void }) => {
       <div className="close" onClick={close} />
       <nav className="control">
         <label className="close" onClick={close} />
-        <label className="download" onClick={()=>{downloadImage(url)}}><img src={downloadBtn} alt="" /></label>
+        <label className="download" onClick={()=>{downloadImage(url)}}><img src={downloadImg} alt="" /></label>
       </nav>
       <div className="container">
         <img className="img" src={url} alt="" />

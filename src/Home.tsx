@@ -11,7 +11,7 @@ const CDNURL = 'https://ldsjjrfkttvljddvamzj.supabase.co/storage/v1/object/publi
 
 const Home = () => {
   const [images, setImages] = useState<any [] | null>()
-  const dates = ["2023.01.28", "2023.01.29", "2023.01.30"]
+  const dates = ["2023.01.28", "2023.01.29", "2023.01.30", "2023.01.31"]
   const [now, setNow] = useState(dates[dates.length-1])
   const [viewWindow, setViewWindow] = useState<any [] | null>()
 
@@ -29,6 +29,9 @@ const Home = () => {
 
   useEffect(()=>{
     getImages(now)
+    // scroll dates to right
+    const datesCont = document.querySelector(".Home .dates")
+    datesCont?.scrollTo(datesCont.scrollWidth, 0)
   }, [])
 
   const changeDate = (e: any) => {

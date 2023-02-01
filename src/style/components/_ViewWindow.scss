@@ -8,6 +8,7 @@
   background: rgb(#000, .5);
   backdrop-filter: blur(10px);
   padding: 2rem;
+  
   & > .close{
     position: absolute;
     top: 0;
@@ -15,6 +16,7 @@
     bottom: 0;
     left: 0;
   }
+
   .control{
     position: relative;
     z-index: inherit;
@@ -39,14 +41,24 @@
       &::before, &::after{
         content: '';
         position: absolute;
-        height: .09rem;
+        height: .08rem;
         width: .852rem;
         background: #000;
+        border-radius: 100vmax;
       }
       &::before{ transform: rotate(45deg); }
       &::after{ transform: rotate(-45deg); }
     }
+    .download{
+      position: relative;
+      .loader{
+        width: 1rem;
+        border-width: .11rem;
+        border-color: $main;
+      }
+    }
   }
+
   .container{
     position: absolute;
     left: 50%;

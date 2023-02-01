@@ -44,10 +44,16 @@ a {
 }
 
 .Home .dates {
+  overflow-x: auto;
   display: flex;
   gap: 1rem;
-  flex-wrap: wrap;
   padding: var(--wrapper-padding);
+}
+.Home .dates::-webkit-scrollbar {
+  height: 0.5rem;
+}
+.Home .dates::-webkit-scrollbar-thumb {
+  background: #4f4f4f;
 }
 .Home .dates input[type=radio] {
   position: absolute;
@@ -72,7 +78,10 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
 }
-.Home .img_prev {
+.Home .images .loader {
+  top: 2rem;
+}
+.Home .images .img_prev {
   cursor: pointer;
   aspect-ratio: 1/1;
   background: #222;
@@ -136,15 +145,24 @@ header .logo {
 .ViewWindow .control .close::before, .ViewWindow .control .close::after {
   content: "";
   position: absolute;
-  height: 0.09rem;
+  height: 0.08rem;
   width: 0.852rem;
   background: #000;
+  border-radius: 100vmax;
 }
 .ViewWindow .control .close::before {
   transform: rotate(45deg);
 }
 .ViewWindow .control .close::after {
   transform: rotate(-45deg);
+}
+.ViewWindow .control .download {
+  position: relative;
+}
+.ViewWindow .control .download .loader {
+  width: 1rem;
+  border-width: 0.11rem;
+  border-color: #1c1c1c;
 }
 .ViewWindow .container {
   position: absolute;
@@ -171,11 +189,10 @@ ul {
 .loader {
   position: absolute;
   left: 50%;
-  top: 2rem;
   aspect-ratio: 1/1;
   width: 2rem;
   border: 0.125rem solid #ededed;
-  border-bottom-color: transparent;
+  border-bottom-color: transparent !important;
   border-radius: 50%;
   -webkit-animation: 1s loader linear infinite;
           animation: 1s loader linear infinite;

@@ -23,11 +23,10 @@ ul{
 .loader{
   position: absolute;
   left: 50%;
-  top: 2rem;
   aspect-ratio: 1/1;
   width: 2rem;
-  border: .125rem solid #ededed;
-  border-bottom-color: transparent;
+  border: .125rem solid $light;
+  border-bottom-color: transparent !important;
   border-radius: 50%;
   @keyframes loader{
     from{ transform: translateX(-50%) rotate(0); }
