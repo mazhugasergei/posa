@@ -19,10 +19,12 @@ const ViewWindow = ({ url, close }: { url: string, close: ()=>void }) => {
         link.click()
       })
     // remove loader from download btn
-    downloadBtn.innerHTML = ""
-    const img = document.createElement("img")
-    img.src = downloadImg
-    downloadBtn.appendChild(img)
+    setTimeout(()=>{
+      downloadBtn.innerHTML = ""
+      const img = document.createElement("img")
+      img.src = downloadImg
+      downloadBtn.appendChild(img)
+    }, 500)
   }
 
   return (
