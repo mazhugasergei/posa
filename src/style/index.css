@@ -9,6 +9,7 @@
 }
 
 .wrapper {
+  max-width: 90rem;
   padding-left: var(--wrapper-padding);
   padding-right: var(--wrapper-padding);
   margin-left: auto;
@@ -77,6 +78,7 @@ a {
   position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  padding: 0;
 }
 .Home .images .loader {
   top: 2rem;

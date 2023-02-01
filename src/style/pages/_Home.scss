@@ -34,6 +34,7 @@
     position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    padding: 0;
     .loader{
       top: 2rem;
     }

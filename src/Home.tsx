@@ -46,7 +46,7 @@ const Home = () => {
   return (
     <main className="Home">
       { viewWindow }
-      <nav className="dates">
+      <nav className="dates wrapper">
         {
           dates.map((date, i)=>(
             <div key={i}>
@@ -56,7 +56,7 @@ const Home = () => {
           ))
         }
       </nav>
-      <ul className="images">
+      <ul className="images wrapper">
         { !images && <div className="loader"/> }
         {
           images && images.map((img, i) => (
