@@ -50,7 +50,12 @@ a {
   padding: var(--wrapper-padding);
 }
 .Home .dates input[type=radio] {
-  display: none;
+  position: absolute;
+  opacity: 0;
+}
+.Home .dates input[type=radio]:focus-visible + label {
+  outline: 0.125rem solid #ededed;
+  outline-offset: 0.125rem;
 }
 .Home .dates input[type=radio]:checked + label {
   background: #ededed;
@@ -64,12 +69,12 @@ a {
 }
 .Home .images {
   position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
 }
 .Home .img_prev {
   cursor: pointer;
   aspect-ratio: 1/1;
-  width: 10rem;
   background: #222;
   background-size: cover;
   background-position: center;
@@ -152,6 +157,7 @@ header .logo {
   display: block;
   max-width: calc(100vw - 4rem);
   max-height: calc(100vh - 4rem);
+  background: #222;
 }
 
 body {

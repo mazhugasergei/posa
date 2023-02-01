@@ -1,10 +1,9 @@
-// react
-import { useEffect } from "react"
 // images
 import downloadBtn from "../images/ui/download.svg"
 
 const ViewWindow = ({ url, close }: { url: string, close: ()=>void }) => {
   const downloadImage = async (url: string) => {
+    // document.querySelector('.ViewWindow .control .download')?.innerHTML = document.createElement('div')
     await fetch(url)
       .then(res => {return res.blob()})
       .then(blob =>{

@@ -5,7 +5,12 @@
     flex-wrap: wrap;
     padding: var(--wrapper-padding);
     input[type=radio]{
-      display: none;
+      position: absolute;
+      opacity: 0;
+      &:focus-visible + label{
+        outline: .125rem solid $light;
+        outline-offset: .125rem;
+      }
       &:checked + label{
         background: $light;
         color: $main;
@@ -21,14 +26,12 @@
   
   .images{
     position: relative;
-    display: flex; ////
-    // display: grid;
-    // grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   }
   .img_prev{
     cursor: pointer;
     aspect-ratio: 1/1;
-    width: 10rem; ////
     background: #222;
     background-size: cover;
     background-position: center;

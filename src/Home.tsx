@@ -57,7 +57,10 @@ const Home = () => {
         { !images && <div className="loader"/> }
         {
           images && images.map((img, i) => (
-            <li className="img_prev" style={{ backgroundImage: "url('"+CDNURL+now+"/"+img.name+"')" }} key={i}
+            <li
+              className="img_prev"
+              style={{ backgroundImage: "url('"+CDNURL+now+"/"+img.name+"')" }}
+              key={i}
               onClick={()=>{setViewWindow([<ViewWindow url={CDNURL+now+"/"+img.name} close={closeViewWindow} key={i}/>])}}
             />
           ))
