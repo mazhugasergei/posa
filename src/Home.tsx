@@ -1,5 +1,5 @@
 // react
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useState } from 'react'
 // supabase
 import { createClient } from '@supabase/supabase-js'
 // components
@@ -10,29 +10,47 @@ const supabase = createClient('https://ldsjjrfkttvljddvamzj.supabase.co', public
 const CDNURL = 'https://ldsjjrfkttvljddvamzj.supabase.co/storage/v1/object/public/images/'
 
 const Home = () => {
-  const [images, setImages] = useState<any [] | null>()
-  const dates = ["2023.01.28", "2023.01.29", "2023.01.30", "2023.01.31", "2023.02.02"]
-  const [now, setNow] = useState(dates[dates.length-1])
-  const [viewWindow, setViewWindow] = useState<any [] | null>()
+  const [images, setImages] = useState<any[] | null>()
+  const [dates, setDates] = useState<any[] | null>()
+  const [now, setNow] = useState<string | null>()
+  const [viewWindow, setViewWindow] = useState<any[] | null>()
+
+  const getDates = async () => {
+    supabase
+      .from('table_1')
+      .select('date')
+      .then(res => {
+        let tmp = [] as string[]
+        res.data?.forEach(dateObj => tmp.push(dateObj.date))
+        return tmp
+      })
+      .then(datesArr => {
+        setDates(datesArr)
+        const now = datesArr[datesArr.length-1]
+        setNow(now)
+        getImages(now)
+        // scroll dates to right
+        const datesCont = document.querySelector(".Home .dates")
+        datesCont?.scrollTo(datesCont.scrollWidth, 0)
+      })
+  }
 
   const getImages = async (date: string) => {
     setImages(null)
     await supabase.storage
-    .from('images')
-    .list(date, {
-      limit: 100,
-      offset: 0,
-      sortBy: { column: 'name', order: 'asc' }
-    })
-    .then(res => setImages(res.data))
+      .from('images')
+      .list(date, {
+        limit: 100,
+        offset: 0,
+        sortBy: { column: 'name', order: 'asc' }
+      })
+      .then(res => setImages(res.data))
   }
 
-  useEffect(()=>{
-    getImages(now)
-    // scroll dates to right
-    const datesCont = document.querySelector(".Home .dates")
-    datesCont?.scrollTo(datesCont.scrollWidth, 0)
+  useLayoutEffect(()=>{
+    getDates()
   }, [])
+
 
   const changeDate = (e: any) => {
     if(e.target.checked){
@@ -41,14 +59,22 @@ const Home = () => {
     }
   }
 
-  const closeViewWindow = () => setViewWindow(null)
+  const openViewWindow = (url: string) => {
+    document.body.style.overflow = "hidden"
+    setViewWindow([<ViewWindow url={url} close={closeViewWindow} key={0}/>])
+  }
+
+  const closeViewWindow = () => {
+    document.body.style.overflow = "unset"
+    setViewWindow(null)
+  }
 
   return (
     <main className="Home">
       { viewWindow }
       <nav className="dates wrapper">
         {
-          dates.map((date, i)=>(
+          dates?.map((date, i)=>(
             <div key={i}>
               <input type="radio" name="date" id={date} defaultChecked={date==now? true : false} onChange={changeDate} />
               <label className="btn" htmlFor={date}>{date}</label>
@@ -62,7 +88,7 @@ const Home = () => {
           images && images.map((img, i) => (
             <li
               style={{ backgroundImage: "url('"+CDNURL+now+"/"+img.name+"')" }}
-              onClick={()=>{setViewWindow([<ViewWindow url={CDNURL+now+"/"+img.name} close={closeViewWindow} key={i}/>])}}
+              onClick={()=>{openViewWindow(CDNURL+now+"/"+img.name)}}
               key={i}
             />
           ))
