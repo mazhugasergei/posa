@@ -16,14 +16,13 @@ const Home = () => {
   const [viewWindow, setViewWindow] = useState<any[] | null>()
 
   const getDates = async () => {
-    supabase
-      .from('table_1')
-      .select('date')
+    await supabase.storage
+      .from('images')
+      .list() // get all the folders' names
       .then(res => {
+        // extract strings from objects
         let tmp = [] as string[]
-        res.data?.forEach(dateObj => {
-          tmp.push(dateObj.date)
-        })
+        res.data?.forEach(dateObj => tmp.push(dateObj.name))
         return tmp
       })
       .then(datesArr => {
@@ -31,7 +30,7 @@ const Home = () => {
         const now = datesArr[datesArr.length-1]
         setNow(now)
         getImages(now)
-        // scroll dates to right
+        // scroll dates to the right
         const datesCont = document.querySelector(".Home .dates")
         datesCont?.scrollTo(datesCont.scrollWidth, 0)
       })
