@@ -6,10 +6,11 @@
 
 :root {
   --wrapper-padding: 1rem;
+  --wrapper-max-width: 90rem;
 }
 
 .wrapper {
-  max-width: 90rem;
+  max-width: var(--wrapper-max-width);
   padding-left: var(--wrapper-padding);
   padding-right: var(--wrapper-padding);
   margin-left: auto;
@@ -76,6 +77,7 @@ a {
 }
 .Home .images {
   position: relative;
+  max-width: calc(var(--wrapper-max-width) - var(--wrapper-padding) * 2);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   padding: 0;

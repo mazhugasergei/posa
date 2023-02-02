@@ -1,9 +1,10 @@
 :root{
   --wrapper-padding: 1rem;
+  --wrapper-max-width: 90rem;
 }
 
 .wrapper{
-  max-width: 90rem;
+  max-width: var(--wrapper-max-width);
   padding-left: var(--wrapper-padding);
   padding-right: var(--wrapper-padding);
   margin-left: auto;
