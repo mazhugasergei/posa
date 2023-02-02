@@ -85,10 +85,10 @@ a {
 .Home .images .loader {
   top: 2rem;
 }
-.Home .images .img_prev {
+.Home .images li {
   cursor: pointer;
   aspect-ratio: 1/1;
-  background: #222;
+  background-color: #222;
   background-size: cover;
   background-position: center;
 }
