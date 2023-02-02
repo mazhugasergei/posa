@@ -22,25 +22,25 @@ const Home = () => {
       .then(res => {
         // extract strings from objects
         let tmp = [] as string[]
-        res.data?.forEach(dateObj => tmp.push(dateObj.name))
+        res.data?.forEach(folderObj => tmp.push(folderObj.name))
         return tmp
       })
-      .then(datesArr => {
-        setDates(datesArr)
-        const now = datesArr[datesArr.length-1]
+      .then(foldersNames => {
+        setDates(foldersNames)
+        const now = foldersNames[foldersNames.length-1]
         setNow(now)
         getImages(now)
-        // scroll dates to the right
-        const datesCont = document.querySelector(".Home .dates")
+        // scroll categories to the right
+        const datesCont = document.querySelector(".Home .folders")
         datesCont?.scrollTo(datesCont.scrollWidth, 0)
       })
   }
 
-  const getImages = async (date: string) => {
+  const getImages = async (folder: string) => {
     setImages(null)
     await supabase.storage
       .from('images')
-      .list(date)
+      .list(folder)
       .then(res => setImages(res.data))
   }
 
@@ -49,7 +49,7 @@ const Home = () => {
   }, [])
 
 
-  const changeDate = (e: any) => {
+  const changeFolder = (e: any) => {
     if(e.target.checked){
       setNow(e.target.id)
       getImages(e.target.id)
@@ -69,14 +69,19 @@ const Home = () => {
   return (
     <main className="Home">
       { viewWindow }
-      <nav className="dates wrapper">
+      <nav className="folders wrapper">
         {
-          dates?.map((date, i)=>(
-            <div key={i}>
-              <input type="radio" name="date" id={date} defaultChecked={date==now? true : false} onChange={changeDate} />
-              <label className="btn" htmlFor={date}>{new Date(date).toLocaleDateString("en-US", {day: 'numeric', month: 'short'})}</label>
-            </div>
-          ))
+          dates?.map((folder, i)=> {
+            const date = new Date(folder).toLocaleDateString("en-US", {day: 'numeric', month: 'short'})
+            return(
+              <div key={i}>
+                <input type="radio" name="folders" id={folder} defaultChecked={folder==now? true : false} onChange={changeFolder} />
+                <label className="btn" htmlFor={folder}>{
+                  date !== "Invalid Date"? date : folder
+                }</label>
+              </div>
+            )
+          })
         }
       </nav>
       <ul className="images wrapper">

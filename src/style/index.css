@@ -58,31 +58,31 @@ header .logo {
   filter: invert(1);
 }
 
-.Home .dates {
+.Home .folders {
   overflow-x: auto;
   display: flex;
   gap: 1rem;
   padding: var(--wrapper-padding);
 }
-.Home .dates::-webkit-scrollbar {
+.Home .folders::-webkit-scrollbar {
   height: 0.5rem;
 }
-.Home .dates::-webkit-scrollbar-thumb {
+.Home .folders::-webkit-scrollbar-thumb {
   background: #4f4f4f;
 }
-.Home .dates input[type=radio] {
+.Home .folders input[type=radio] {
   position: absolute;
   opacity: 0;
 }
-.Home .dates input[type=radio]:focus-visible + label {
+.Home .folders input[type=radio]:focus-visible + label {
   outline: 0.125rem solid #ededed;
   outline-offset: 0.125rem;
 }
-.Home .dates input[type=radio]:checked + label {
+.Home .folders input[type=radio]:checked + label {
   background: #ededed;
   color: #1c1c1c;
 }
-.Home .dates label {
+.Home .folders label {
   cursor: pointer;
   display: block;
   white-space: nowrap;
