@@ -33,7 +33,7 @@ a {
   cursor: pointer;
   background: #1c1c1c;
   color: #ededed;
-  font-weight: 600;
+  font-weight: 700;
   border: none;
   padding: 0.6rem 0.8rem;
 }
@@ -85,18 +85,15 @@ header .logo {
 .Home .dates label {
   cursor: pointer;
   display: block;
-  border: 0.0625rem solid #ededed;
+  white-space: nowrap;
+  border: 0.1rem solid #ededed;
   border-radius: 100vmax;
 }
 .Home .images {
-  position: relative;
   max-width: calc(var(--wrapper-max-width) - var(--wrapper-padding) * 2);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
   padding: 0;
-}
-.Home .images .loader {
-  top: 2rem;
 }
 .Home .images li {
   cursor: pointer;
@@ -193,6 +190,7 @@ ul {
 .loader {
   position: absolute;
   left: 50%;
+  top: 50%;
   aspect-ratio: 1/1;
   width: 2rem;
   border: 0.125rem solid #ededed;
@@ -203,17 +201,17 @@ ul {
 }
 @-webkit-keyframes loader {
   from {
-    transform: translateX(-50%) rotate(0);
+    transform: translate(-50%, -50%) rotate(0);
   }
   to {
-    transform: translateX(-50%) rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 @keyframes loader {
   from {
-    transform: translateX(-50%) rotate(0);
+    transform: translate(-50%, -50%) rotate(0);
   }
   to {
-    transform: translateX(-50%) rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }/*# sourceMappingURL=index.css.map */

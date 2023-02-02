@@ -24,14 +24,15 @@ ul{
 .loader{
   position: absolute;
   left: 50%;
+  top: 50%;
   aspect-ratio: 1/1;
   width: 2rem;
   border: .125rem solid $light;
   border-bottom-color: transparent !important;
   border-radius: 50%;
   @keyframes loader{
-    from{ transform: translateX(-50%) rotate(0); }
-    to{ transform: translateX(-50%) rotate(360deg); }
+    from{ transform: translate(-50%, -50%) rotate(0); }
+    to{ transform: translate(-50%, -50%) rotate(360deg); }
   }
   animation: 1s loader linear infinite;
 }

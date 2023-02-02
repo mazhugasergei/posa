@@ -2,11 +2,9 @@
   cursor: pointer;
   background: $main;
   color: $light;
-  font-weight: 600;
+  font-weight: 700;
   border: none;
-  // border-radius: .25rem;
   padding: .6rem .8rem;
-  // padding: .5rem .75rem;
   &.light{
     background: $light;
     color: $main;

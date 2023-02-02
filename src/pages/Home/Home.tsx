@@ -21,7 +21,9 @@ const Home = () => {
       .select('date')
       .then(res => {
         let tmp = [] as string[]
-        res.data?.forEach(dateObj => tmp.push(dateObj.date))
+        res.data?.forEach(dateObj => {
+          tmp.push(dateObj.date)
+        })
         return tmp
       })
       .then(datesArr => {
@@ -39,11 +41,7 @@ const Home = () => {
     setImages(null)
     await supabase.storage
       .from('images')
-      .list(date, {
-        limit: 100,
-        offset: 0,
-        sortBy: { column: 'name', order: 'asc' }
-      })
+      .list(date)
       .then(res => setImages(res.data))
   }
 
@@ -77,7 +75,7 @@ const Home = () => {
           dates?.map((date, i)=>(
             <div key={i}>
               <input type="radio" name="date" id={date} defaultChecked={date==now? true : false} onChange={changeDate} />
-              <label className="btn" htmlFor={date}>{date}</label>
+              <label className="btn" htmlFor={date}>{new Date(date).toLocaleDateString("en-US", {day: 'numeric', month: 'short'})}</label>
             </div>
           ))
         }

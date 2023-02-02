@@ -25,20 +25,17 @@
     label{
       cursor: pointer;
       display: block;
-      border: .0625rem solid $light;
+      white-space: nowrap;
+      border: .1rem solid $light;
       border-radius: 100vmax;
     }
   }
   
   .images{
-    position: relative;
     max-width: calc(var(--wrapper-max-width) - var(--wrapper-padding)*2);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
     padding: 0;
-    .loader{
-      top: 2rem;
-    }
     li{
       cursor: pointer;
       aspect-ratio: 1/1;
