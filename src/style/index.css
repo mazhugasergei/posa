@@ -126,8 +126,8 @@ header .logo {
   left: 0;
 }
 .ViewWindow .control {
-  position: relative;
-  z-index: inherit;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-flow: column;
   align-items: flex-end;
@@ -136,6 +136,8 @@ header .logo {
 }
 .ViewWindow .control label {
   cursor: pointer;
+  position: relative;
+  z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -159,9 +161,6 @@ header .logo {
 }
 .ViewWindow .control .close::after {
   transform: rotate(-45deg);
-}
-.ViewWindow .control .download {
-  position: relative;
 }
 .ViewWindow .control .download .loader {
   width: 1rem;

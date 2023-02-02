@@ -18,8 +18,8 @@
   }
 
   .control{
-    position: relative;
-    z-index: inherit;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-flow: column;
     align-items: flex-end;
@@ -27,6 +27,8 @@
     margin-left: auto;
     label{
       cursor: pointer;
+      position: relative;
+      z-index: 1000;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -50,7 +52,6 @@
       &::after{ transform: rotate(-45deg); }
     }
     .download{
-      position: relative;
       .loader{
         width: 1rem;
         border-width: .11rem;
