@@ -6,9 +6,9 @@ import { HashRouter, Routes, Route } from 'react-router-dom'
 // style
 import './style/index.css'
 // layout components
-import Header from './components/layout/Header'
+import Header from './components/Header/Header'
 // components
-import Home from './Home'
+import Home from './pages/Home/Home'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

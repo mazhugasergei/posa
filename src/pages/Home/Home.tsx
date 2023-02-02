@@ -3,7 +3,7 @@ import { useEffect, useLayoutEffect, useState } from 'react'
 // supabase
 import { createClient } from '@supabase/supabase-js'
 // components
-import ViewWindow from './components/ViewWindow'
+import ViewWindow from './ViewWindow'
 
 const publicKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxkc2pqcmZrdHR2bGpkZHZhbXpqIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzQ5NzM5MTgsImV4cCI6MTk5MDU0OTkxOH0.2SFgnW4nDEHzh_ZoAfbrI1RNI6QPgCO9PV6XVAdUsM0'
 const supabase = createClient('https://ldsjjrfkttvljddvamzj.supabase.co', publicKey)

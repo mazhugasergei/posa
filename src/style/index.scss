@@ -8,11 +8,12 @@
 @import "./ui/wrapper";
 @import "./ui/typography";
 @import "./ui/btn";
-@import "./pages/Home";
-@import "./components/layout/Header";
-@import "./components/ViewWindow";
+@import "../components/Header/Header";
+@import "../pages/Home/Home";
+@import "../pages/Home/ViewWindow";
 
 body {
+  overflow-x: hidden;
   background: $main;
 }
 

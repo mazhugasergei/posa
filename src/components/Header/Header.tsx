@@ -1,5 +1,5 @@
 // images
-import logo from "../../images/ui/logo.svg"
+import logo from "./images/logo.svg"
 
 const Header = () => {
   return (

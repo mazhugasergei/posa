@@ -1,5 +1,5 @@
 // images
-import downloadImg from "../images/ui/download.svg"
+import downloadImg from "./images/download.svg"
 
 const ViewWindow = ({ url, close }: { url: string, close: ()=>void }) => {
   const downloadImage = async (url: string) => {

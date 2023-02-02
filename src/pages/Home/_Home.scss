@@ -34,7 +34,7 @@
     position: relative;
     max-width: calc(var(--wrapper-max-width) - var(--wrapper-padding)*2);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
     padding: 0;
     .loader{
       top: 2rem;

@@ -45,6 +45,19 @@ a {
   background: #05D36B;
 }
 
+header {
+  padding: 1rem;
+}
+header .logo {
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  width: 8rem;
+  filter: invert(1);
+}
+
 .Home .dates {
   overflow-x: auto;
   display: flex;
@@ -79,7 +92,7 @@ a {
   position: relative;
   max-width: calc(var(--wrapper-max-width) - var(--wrapper-padding) * 2);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
   padding: 0;
 }
 .Home .images .loader {
@@ -91,19 +104,6 @@ a {
   background-color: #222;
   background-size: cover;
   background-position: center;
-}
-
-header {
-  padding: 1rem;
-}
-header .logo {
-  pointer-events: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  width: 8rem;
-  filter: invert(1);
 }
 
 .ViewWindow {
@@ -183,6 +183,7 @@ header .logo {
 }
 
 body {
+  overflow-x: hidden;
   background: #1c1c1c;
 }
 
