@@ -65,10 +65,10 @@ header .logo {
   padding: var(--wrapper-padding);
 }
 .Home .folders::-webkit-scrollbar {
-  height: 0.5rem;
+  height: 0.25rem;
 }
 .Home .folders::-webkit-scrollbar-thumb {
-  background: #4f4f4f;
+  background: #ededed;
 }
 .Home .folders input[type=radio] {
   position: absolute;

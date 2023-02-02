@@ -5,10 +5,10 @@
     gap: 1rem;
     padding: var(--wrapper-padding);
     &::-webkit-scrollbar {
-      height: .5rem;
+      height: .25rem;
     }
     &::-webkit-scrollbar-thumb {
-      background: lighten($main, 20); 
+      background: $light;
     }
     input[type=radio]{
       position: absolute;
