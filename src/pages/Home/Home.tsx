@@ -30,6 +30,8 @@ const Home = () => {
         const now = foldersNames[foldersNames.length-1]
         setNow(now)
         getImages(now)
+      })
+      .then(()=>{
         // scroll categories to the right
         const datesCont = document.querySelector(".Home .folders")
         datesCont?.scrollTo(datesCont.scrollWidth, 0)
