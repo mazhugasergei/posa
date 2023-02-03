@@ -1,6 +1,7 @@
 .Home{
   .folders{
     overflow-x: auto;
+    overflow-y: hidden;
     display: flex;
     gap: 1rem;
     padding: var(--wrapper-padding);
