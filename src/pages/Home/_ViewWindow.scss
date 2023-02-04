@@ -1,20 +1,14 @@
 .ViewWindow{
   z-index: 1000;
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   background: rgb(#000, .5);
   backdrop-filter: blur(10px);
   padding: 2rem;
   
   & > .close{
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    inset: 0;
   }
 
   .control{

@@ -60,6 +60,7 @@ header .logo {
 
 .Home .folders {
   overflow-x: auto;
+  overflow-y: hidden;
   display: flex;
   gap: 1rem;
   padding: var(--wrapper-padding);
@@ -106,10 +107,7 @@ header .logo {
 .ViewWindow {
   z-index: 1000;
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   background: rgba(0, 0, 0, 0.5);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
@@ -117,10 +115,7 @@ header .logo {
 }
 .ViewWindow > .close {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
 }
 .ViewWindow .control {
   width: 100%;
