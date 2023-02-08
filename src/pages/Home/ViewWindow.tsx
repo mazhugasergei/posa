@@ -1,6 +1,6 @@
 // images
-import { FC } from "react";
-import downloadImg from "./images/download.svg";
+import { FC } from "react"
+import downloadImg from "./images/download.svg"
 
 interface ViewWindowProps {
 	url: string
@@ -12,30 +12,30 @@ const ViewWindow: FC<ViewWindowProps> = ({ url, close }) => {
 		// add loader to download btn
 		const downloadBtn = document.querySelector(
 			".ViewWindow .control .download"
-		) as HTMLElement;
-		downloadBtn.innerHTML = "";
-		const loader = document.createElement("div");
-		loader.classList.add("loader");
-		downloadBtn.appendChild(loader);
+		) as HTMLElement
+		downloadBtn.innerHTML = ""
+		const loader = document.createElement("div")
+		loader.classList.add("loader")
+		downloadBtn.appendChild(loader)
 		// download the image
 		await fetch(url)
 			.then((res) => {
-				return res.blob();
+				return res.blob()
 			})
 			.then((blob) => {
-				const link = document.createElement("a");
-				link.href = window.URL.createObjectURL(blob);
-				link.download = "";
-				link.click();
-			});
+				const link = document.createElement("a")
+				link.href = window.URL.createObjectURL(blob)
+				link.download = ""
+				link.click()
+			})
 		// remove loader from download btn
 		setTimeout(() => {
-			downloadBtn.innerHTML = "";
-			const img = document.createElement("img");
-			img.src = downloadImg;
-			downloadBtn.appendChild(img);
-		}, 500);
-	};
+			downloadBtn.innerHTML = ""
+			const img = document.createElement("img")
+			img.src = downloadImg
+			downloadBtn.appendChild(img)
+		}, 500)
+	}
 
 	return (
 		<div className="ViewWindow">
@@ -45,7 +45,7 @@ const ViewWindow: FC<ViewWindowProps> = ({ url, close }) => {
 				<label
 					className="download"
 					onClick={() => {
-						downloadImage(url);
+						downloadImage(url)
 					}}>
 					<img src={downloadImg} alt="" />
 				</label>
@@ -54,7 +54,7 @@ const ViewWindow: FC<ViewWindowProps> = ({ url, close }) => {
 				<img className="img" src={url} alt="" />
 			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default ViewWindow;
+export default ViewWindow
