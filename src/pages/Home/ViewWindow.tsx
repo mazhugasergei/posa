@@ -3,8 +3,8 @@ import { FC, PropsWithChildren } from "react";
 import downloadImg from "./images/download.svg";
 
 interface ViewWindowProps {
-	url: string;
-	close: () => void;
+	url: string
+	close: () => void
 }
 
 const ViewWindow: FC<ViewWindowProps> = ({ url, close }) => {
