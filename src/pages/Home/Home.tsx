@@ -1,5 +1,5 @@
 // react
-import { useEffect, useLayoutEffect, useState } from 'react'
+import { useLayoutEffect, useState } from 'react'
 // supabase
 import { createClient } from '@supabase/supabase-js'
 // components
