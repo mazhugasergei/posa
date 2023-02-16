@@ -5,9 +5,9 @@ import { createClient } from '@supabase/supabase-js'
 // components
 import ViewWindow from './ViewWindow'
 
-const publicKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxkc2pqcmZrdHR2bGpkZHZhbXpqIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzQ5NzM5MTgsImV4cCI6MTk5MDU0OTkxOH0.2SFgnW4nDEHzh_ZoAfbrI1RNI6QPgCO9PV6XVAdUsM0'
-const supabase = createClient('https://ldsjjrfkttvljddvamzj.supabase.co', publicKey)
-const CDNURL = 'https://ldsjjrfkttvljddvamzj.supabase.co/storage/v1/object/public/images/'
+const publicKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxteXNtYmR3aWljbmN6Y2NhZ2JuIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzY1NjA3ODcsImV4cCI6MTk5MjEzNjc4N30.vK-GKvv9LDJ12qmIJud0qImK9p-ztcSKaodIeSRUvMA'
+const supabase = createClient('https://lmysmbdwiicnczccagbn.supabase.co', publicKey)
+const CDNURL = 'https://lmysmbdwiicnczccagbn.supabase.co/storage/v1/object/public/images/'
 
 const Home = () => {
   const [images, setImages] = useState<any[] | null>()
