@@ -31,6 +31,7 @@ const Home = () => {
         setNow(now)
         getImages(now)
       })
+      // .catch(e => console.log("error in getDates()"))
   }
 
   const getImages = async (folder: string) => {
@@ -39,6 +40,7 @@ const Home = () => {
       .from('images')
       .list(folder)
       .then(res => setImages(res.data))
+      // .catch(e => console.log("error in getImages()"))
   }
 
   useLayoutEffect(()=>{
